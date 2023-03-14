@@ -115,11 +115,18 @@ figure {
     border-style: solid;
     border-radius: 5px;
 }
+#popart figure {
+ background-color: var(--color8);
+}
 figure img {
     margin-bottom: -4px;
     width: 100%;
     object-fit: cover;
     object-position: 0 -150px;
+}
+#popart figure img {
+    object-position: 0;
+    object-fit: cover;
 }
 figcaption {
     background-color: rgba(255,255,255,0.8);
@@ -136,7 +143,11 @@ figcaption a {
     text-decoration: none;
     color: var(--color1);
 }
-
+.stripe {
+    background-color: var(--color2);
+    color: white;
+    padding: 1rem 0 2rem 0; 
+}
 
 #featured figure {
     max-height: 650px;
@@ -239,11 +250,14 @@ footer address {
     address {
         flex-basis: 49.5%;
     }
-    #popular li:last-child {
+    #popular li:last-child figure {
         flex-basis: 100%;
     }
     #popular li:last-child figure img {
         object-position: 0 -350px;
+    }
+    figure {
+        max-height: 100%;
     }
     figure img {
         object-position: 0;
@@ -279,6 +293,26 @@ footer address {
     nav a:hover{
         color: var(--color2);
         background-color: transparent;
+    }
+    #popart ul {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+    }
+    .colspan2{
+        grid-column: span 2;
+    }
+    .colspan3 {
+        grid-column: span 3;
+    }
+    .rowspan2 {
+        grid-row: span 2;
+    }
+    .rowspan2 figure {
+        max-height: unset;
+    }
+    figure {
+        height: 100%;
     }
 }
 
